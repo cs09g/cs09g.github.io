@@ -1,29 +1,60 @@
-var panels = $('.panel');
+var map = $("#map");
+var panels = $(".panel");
+
+var deviceWidth = window.innerWidth;
+var deviceHeight = window.innerHeight;
+
+updateSectionSizeUpToDevice(deviceWidth, deviceHeight);
+
+
+$.scrollify({
+	section: ".panel"
+});
+
+var titleHeight = $(".title.map").css("height").match(/\d+/g);
+var addressHeight = $(".address").css("height").match(/\d+/g);
+
+map.css("width", deviceWidth - 10);
+map.css("height", deviceHeight - titleHeight - addressHeight - 10);
+
+var mainImage = $(".image.main");
+mainImage.css("width", deviceWidth - 10);
+mainImage.css("height", deviceHeight - 10);
+
+
 
 function updateSectionSizeUpToDevice(deviceWidth, deviceHeight) {
-	for (var i = 0, len = panels.length; i < len; i++) {
-		panels[i].style.width = deviceWidth + "px";
-		panels[i].style.height = deviceHeight + "px";
-	}
+	panels.css("width", deviceWidth - 10);
+	panels.css("height", deviceHeight - 10);
 }
 
-$(window).load(function() {
-	var deviceWidth = window.innerWidth;
-	var deviceHeight = window.innerHeight;
-	
-	updateSectionSizeUpToDevice(deviceWidth, deviceHeight);
+function initMap() {
+	$(window).load(function() {
+		var hall = {lat: 24.022910, lng: 120.554900};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 15,
+			center: hall,
+			gestureHandling: "cooperative"
+		});
+		var marker = new google.maps.Marker({
+			position: hall,
+			map: map,
+			title: "全國麗園大飯店"
+		});
+		var contentString = "<div id='content'>全國麗園大飯店</div>";
 
-	$.scrollify({
-		section: ".panel"
-	});
-
-	var map = $("#map");
-	var titleHeight = $(".title.map").css("height").match(/\d+/g);
-
-	map.css("width", deviceWidth - 10);
-	map.css("height", deviceHeight - titleHeight - 10);
-});
+		var infowindow = new google.maps.InfoWindow({
+			content: contentString,
+			position: hall
+		});
+		marker.addListener('click', function() {
+			infowindow.setMap(map);
+		});
+		//address: 彰化縣花壇鄉橋頭村花南路33號
+	})
+}
 
 $(window).resize(function() {
 	updateSectionSizeUpToDevice(window.innerWidth, window.innerHeight);
 });
+

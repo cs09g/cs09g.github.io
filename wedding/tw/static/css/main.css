@@ -29,6 +29,12 @@ body {
 	vertical-align: middle;
 }
 
+.welcome {
+	text-align: center;
+	font-family: setofont;
+	font-size: 20px;
+}
+
 .address p {
 	font-family: setofont;
 	margin: 0px;

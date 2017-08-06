@@ -2,39 +2,48 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-
+		<meta charset="utf8">
 		<link rel="stylesheet" href="static/css/main.css">
 	</head>
 	<body>
-		<section class="panel scrf">
-			<div class="image main"></div>
+		<section class="panel intro">
+			<div class="introchild">
+				<div class="small">星期六晚上</div>
+				<div class="x-large">崔希冀</div>
+				<div class="x-large">黄琪眞</div>
+				<div class="x-large bold ceremony">囍宴邀請</div>
+				<hr class="split">
+				<div class="large date">2017年 11月 4日</div>
+				<div class="large time">星期六 晚上 0時</div>
+				<div class="large hall">全國麗園大飯店</div>
+			</div>
 		</section>
-		<section class="panel scrf">
+		<section class="panel">
+			<img class="image main">
+			<!-- <div class="image main"></div> -->
+		</section>
+		<section class="panel">
 			<div class="welcome">
-				親愛的朋友們，<br>
-				台灣⇆韓國 遠距離戀愛的我們結婚了！<br><br>
-
-				誠摯邀請大家一同來參加我們的囍宴♥<br>
-				之後會定居在韓國，歡迎大家來韓國找我玩哦！<br>
-				❈因目前都在韓國，無法親自送囍帖，皆以寄信方式送囍帖，敬請見諒。囍盒一律在宴會入場時發送，謝謝！<br>
-				請填寫以下內容以便統計，謝謝。<br>
-				如出席內容/人數，有變動再麻煩主動聯絡哦！感謝！
+				<div class="line">親愛的朋友們，</div>
+				<div class="line">台灣⇆韓國 遠距離戀愛的我們結婚了！</div>
+				<br>
+				<div class="line">誠摯邀請大家一同來參加我們的囍宴♥</div>
+				<div class="line">之後會定居在韓國，</div>
+				<div class="line">歡迎大家來韓國找我玩哦！</div>
+				<div class="line">❈因目前都在韓國，無法親自送囍帖，</div>
+				<div class="line">皆以寄信方式送囍帖，敬請見諒。</div>
+				<div class="line">囍盒一律在宴會入場時發送，謝謝！</div>
+				<div class="line">請填寫以下內容以便統計，謝謝。</div>
+				<div class="line">如出席內容/人數，</div>
+				<div class="line">有變動再麻煩主動聯絡哦！感謝！</div>
 			</div>
 		</section>
-		<section class="panel scrf">
-			<div class="title map">地點</div>
-			<!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center=全国丽园大饭店&zoom=15&scale=1.5&size=300x300&markers=color:red%7C全国丽园大饭店&key=AIzaSyDAOeeU4TQgV86r5_rFwb5azBSQYayImTg"> -->
-			<div id="map"></div>
-			<div class="address">
-				<p><img class="image marker" src="static/image/addressmarker.png"> 彰化縣花壇鄉橋頭村花南路33號</p>
-			</div>
+		<section class="panel info">
+			<!-- <div class="register">查看更多資訊及填寫邀請函，請按: <a href="https://goo.gl/forms/b6vIxOO3n3SdDQvr1">囍宴邀請函</a></div> -->
+			<div class="btn" id="toForms"><img class="icon" src="static/image/pencil.png"> 囍宴邀請函</div>
+			<div class="btn" id="toMap"><img class="icon" src="static/image/marker.png"> Map</div>
 		</section>
-		<section class="panel last">
-			<div class="info">查看更多資訊及填寫邀請函，請按: <a href="https://goo.gl/forms/b6vIxOO3n3SdDQvr1">囍宴邀請函</a></div>
-		</section>
-
 		<script src="static/js/jquery-1.12.4.min.js"></script>
 		<script src="static/js/main.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAOeeU4TQgV86r5_rFwb5azBSQYayImTg&callback=initMap"></script>
 		</body>
 </html>

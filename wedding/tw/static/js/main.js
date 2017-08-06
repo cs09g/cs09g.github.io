@@ -7,10 +7,6 @@ var deviceHeight = window.innerHeight;
 
 updateSectionSizeUpToDevice(deviceWidth, deviceHeight);
 
-// $.scrollify({
-// 	section: ".panel"
-// });
-
 var titleHeight = $(".title.map").css("height").match(/\d+/g);
 var addressHeight = $(".address").css("height").match(/\d+/g);
 

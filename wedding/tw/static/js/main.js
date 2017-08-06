@@ -7,10 +7,11 @@ updateImageUpToDevice(deviceWidth, deviceHeight);
 
 function updateImageUpToDevice(deviceWidth, deviceHeight) {
 	if (deviceHeight > deviceWidth) {
+		mainImage.show();
 		mainImage.attr("src", "static/image/main2.jpg");
 		mainImage.css("width", deviceWidth - 10);
 	} else {
-		mainImage.attr("src", "");
+		mainImage.hide();
 	}
 }
 
@@ -19,10 +20,12 @@ $(window).resize(function() {
 });
 
 $("#toForms").click(function() {
+	ga('send', 'event', 'forms', 'Click', 'forms click');
 	location.href = "https://goo.gl/forms/b6vIxOO3n3SdDQvr1";
 });
 
 $("#toMap").click(function() {
+	ga('send', 'event', 'map', 'Click', 'map click');
 	location.href = "map/";
 });
 

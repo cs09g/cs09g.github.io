@@ -1,11 +1,21 @@
+var mapWrapper = $("#mapWrapper");
 var map = $("#map");
+var details = $("#details");
 
-var deviceWidth = window.innerWidth;
-var deviceHeight = window.innerHeight;
+// var deviceWidth = window.innerWidth;
+// var deviceHeight = window.innerHeight;
 
-map.css("width", deviceWidth);
-map.css("height", deviceHeight);
+// map.css("width", "100%");
+// map.css("height", "100%");
+function resizeMap(mapWrapper) {
+	map.css("height", mapWrapper.css("height"));
+	map.css("width", mapWrapper.css("width"));
+}
 
+resizeMap(mapWrapper);
+$(window).resize(function() {
+	resizeMap(mapWrapper);
+});
 
 function initMap() {
 	$(window).load(function() {
@@ -13,7 +23,11 @@ function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 15,
 			center: hall,
-			gestureHandling: "cooperative"
+			gestureHandling: "cooperative",
+			zoomControl: false,
+			mapTypeControl: false,
+			streetViewControl: false,
+			fullscreenControl: false
 		});
 		var marker = new google.maps.Marker({
 			position: hall,
@@ -28,6 +42,10 @@ function initMap() {
 		});
 		marker.addListener('click', function() {
 			infowindow.setMap(map);
+		});
+
+		google.maps.event.addDomListener(window, 'resize', function() {
+		    map.setCenter(hall);
 		});
 	});
 }

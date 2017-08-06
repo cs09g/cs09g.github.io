@@ -1,15 +1,15 @@
 var map = $("#map");
-var panels = $(".panel");
+var panels = $(".panel.scrf");
+var lastPanel = $(".panel.last");
 
 var deviceWidth = window.innerWidth;
 var deviceHeight = window.innerHeight;
 
 updateSectionSizeUpToDevice(deviceWidth, deviceHeight);
 
-
-$.scrollify({
-	section: ".panel"
-});
+// $.scrollify({
+// 	section: ".panel"
+// });
 
 var titleHeight = $(".title.map").css("height").match(/\d+/g);
 var addressHeight = $(".address").css("height").match(/\d+/g);
@@ -50,8 +50,8 @@ function initMap() {
 		marker.addListener('click', function() {
 			infowindow.setMap(map);
 		});
-		//address: 彰化縣花壇鄉橋頭村花南路33號
-	})
+		lastPanel.css("height", 20);
+	});
 }
 
 $(window).resize(function() {

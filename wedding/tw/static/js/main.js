@@ -8,7 +8,7 @@ updateImageUpToDevice(deviceWidth, deviceHeight);
 function updateImageUpToDevice(deviceWidth, deviceHeight) {
 	if (deviceHeight > deviceWidth) {
 		mainImage.show();
-		mainImage.attr("src", "static/image/main2.jpg");
+		mainImage.attr("src", "/wedding/tw/static/image/main2.jpg");
 		mainImage.css("width", deviceWidth - 10);
 	} else {
 		mainImage.hide();
